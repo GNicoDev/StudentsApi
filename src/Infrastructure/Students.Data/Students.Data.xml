@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Students.Data</name>
+    </assembly>
+    <members>
+        <member name="T:GNDSoft.Students.Infrastructure.Students.Data.DbContexts.StudentsContext">
+            <summary>
+            Констект подключения к БД студентов и курсов
+            </summary>
+        </member>
+        <member name="M:GNDSoft.Students.Infrastructure.Students.Data.DbContexts.StudentsContext.#ctor(Microsoft.EntityFrameworkCore.DbContextOptions{GNDSoft.Students.Infrastructure.Students.Data.DbContexts.StudentsContext})">
+            <summary>
+            Конструктор
+            </summary>
+            <param name="options">Параметры создания контекста</param>
+            <returns></returns>
+        </member>
+        <member name="M:GNDSoft.Students.Infrastructure.Students.Data.DbContexts.StudentsContext.OnModelCreating(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:GNDSoft.Students.Infrastructure.Students.Data.Models.Course">
+            <summary>
+            Модель описывающая сущность курса
+            </summary>
+        </member>
+        <member name="T:GNDSoft.Students.Infrastructure.Students.Data.Models.Student">
+            <summary>
+            Модель описывающая сущность студента
+            </summary>
+        </member>
+        <member name="T:GNDSoft.Students.Infrastructure.Students.Data.Models.StudentCourse">
+            <summary>
+            Модель связи студентов и курсов
+            </summary>
+        </member>
+        <member name="T:GNDSoft.Students.Infrastructure.Students.Data.Repositories.StudentsRepository`3">
+            <inheritdoc />
+        </member>
+    </members>
+</doc>

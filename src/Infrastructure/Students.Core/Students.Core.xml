@@ -147,6 +147,47 @@
             Уникальный идентификатор курса
             </summary>
         </member>
+        <member name="T:GNDSoft.Students.Infrastructure.Students.Core.Repositories.IBaseRepository`2">
+            <summary>
+            Базовый обобщенный интерфейс по управлению сущностями
+            </summary>
+            <typeparam name="TEntity">Объект БД</typeparam>
+            <typeparam name="TKey">Уникальный идентификатор сущности</typeparam>
+        </member>
+        <member name="M:GNDSoft.Students.Infrastructure.Students.Core.Repositories.IBaseRepository`2.AddAsync(`0)">
+            <summary>
+            Асинхронное добавление записи в таблицу
+            </summary>
+            <param name="entity">Новая запись</param>
+            <returns>Информация о добавленной записи</returns>
+        </member>
+        <member name="M:GNDSoft.Students.Infrastructure.Students.Core.Repositories.IBaseRepository`2.GetAllAsync">
+            <summary>
+            Получение списка всех записей в БД
+            </summary>
+            <returns>Список записей</returns>
+        </member>
+        <member name="M:GNDSoft.Students.Infrastructure.Students.Core.Repositories.IBaseRepository`2.GetOneAsync(`1)">
+            <summary>
+            Получить информацию об одной записи по id
+            </summary>
+            <param name="id">Уникальный идентификатор записи</param>
+            <returns>Инфомарция о записи</returns>
+        </member>
+        <member name="M:GNDSoft.Students.Infrastructure.Students.Core.Repositories.IBaseRepository`2.UpdateAsync(`0)">
+            <summary>
+            Обновить данные в записи
+            </summary>
+            <param name="entity">Данные новой записи</param>
+            <returns>Обвленная запись</returns>
+        </member>
+        <member name="M:GNDSoft.Students.Infrastructure.Students.Core.Repositories.IBaseRepository`2.DeleteAsync(`1)">
+            <summary>
+            Асинхронное удаление записи из таблицы
+            </summary>
+            <param name="id">Уникальный идентификатор записи</param>
+            <returns>Статус операции</returns>
+        </member>
         <member name="T:GNDSoft.Students.Infrastructure.Students.Core.Repositories.IStudentsRepository`3">
             <summary>
             Репозиторий по управлению сущностями студентов
