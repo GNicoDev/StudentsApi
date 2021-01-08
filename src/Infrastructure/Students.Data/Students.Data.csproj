@@ -4,6 +4,21 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <AssemblyName>Students.Data</AssemblyName>
     <RootNamespace>GNDSoft.Students.Infrastructure.Students.Data</RootNamespace>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Description>Пакет для доступа к БД и управлению сущностями БД</Description>
+    <Version>1.0.0</Version>
+    <AssemblyVersion>$(Version)</AssemblyVersion>
+    <Configurations>Debug;Release;DebugLocalPackage</Configurations>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>$(MSBuildProjectDirectory)\Students.Data.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugLocalPackage|AnyCPU'">
+    <DocumentationFile>$(MSBuildProjectDirectory)\Students.Data.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>$(MSBuildProjectDirectory)\Students.Data.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
