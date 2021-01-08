@@ -43,8 +43,8 @@ namespace GNDSoft.Students.Infrastructure.Students.Core.Repositories
         /// <summary>
         /// Асинхронное удаление записи из таблицы
         /// </summary>
-        /// <param name="id">Уникальный идентификатор записи</param>
+        /// <param name="entry">Уникальный идентификатор записи</param>
         /// <returns>Статус операции</returns>
-        Task<bool> DeleteAsync(TKey id);
+        Task<bool> DeleteAsync(TEntity entry);
     }
 }
