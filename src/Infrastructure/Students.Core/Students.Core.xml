@@ -1,0 +1,156 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Students.Core</name>
+    </assembly>
+    <members>
+        <member name="T:GNDSoft.Students.Infrastructure.Students.Core.DbContexts.StudentsDbContext`4">
+            <summary>
+            Базовый контекст БД по управлению сущностями студентов
+            </summary>
+            <typeparam name="TStudent">Сущность студента</typeparam>
+            <typeparam name="TCourse">Сущность курса</typeparam>
+            <typeparam name="TStudentCourse">Сущность связи студента и курса</typeparam>
+            <typeparam name="TKey">Тип уникального идентификатора</typeparam>
+        </member>
+        <member name="M:GNDSoft.Students.Infrastructure.Students.Core.DbContexts.StudentsDbContext`4.#ctor(Microsoft.EntityFrameworkCore.DbContextOptions)">
+            <summary>
+            Конструтор
+            </summary>
+            <param name="options">Опции контекста БД</param>
+        </member>
+        <member name="P:GNDSoft.Students.Infrastructure.Students.Core.DbContexts.StudentsDbContext`4.Students">
+            <summary>
+            Таблица студентов
+            </summary>
+        </member>
+        <member name="P:GNDSoft.Students.Infrastructure.Students.Core.DbContexts.StudentsDbContext`4.Cources">
+            <summary>
+            Таблица курсов
+            </summary>
+        </member>
+        <member name="P:GNDSoft.Students.Infrastructure.Students.Core.DbContexts.StudentsDbContext`4.StudentCources">
+            <summary>
+            Таблица связи курсы студенты
+            </summary>
+        </member>
+        <member name="M:GNDSoft.Students.Infrastructure.Students.Core.DbContexts.StudentsDbContext`4.OnModelCreating(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <summary>
+            Метод по конфигурации таблиц
+            </summary>
+            <param name="modelBuilder">Объект билдера моделей</param>
+        </member>
+        <member name="T:GNDSoft.Students.Infrastructure.Students.Core.ModelConfigurations.CourseConfiguration`1">
+            <summary>
+            Конфигурация таблицы Cources
+            </summary>
+            <typeparam name="TKey">Тип уникального идентификатора</typeparam>
+        </member>
+        <member name="M:GNDSoft.Students.Infrastructure.Students.Core.ModelConfigurations.CourseConfiguration`1.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder{GNDSoft.Students.Infrastructure.Students.Core.Models.Entityes.CourseBase{`0}})">
+            <summary>
+            Метод конфигурации
+            </summary>
+            <param name="builder">Объект настроек</param>
+        </member>
+        <member name="T:GNDSoft.Students.Infrastructure.Students.Core.ModelConfigurations.StudentConfiguration`1">
+            <summary>
+            Конфигурация таблицы Students
+            </summary>
+            <typeparam name="TKey">Тип уникального идентификатора</typeparam>
+        </member>
+        <member name="M:GNDSoft.Students.Infrastructure.Students.Core.ModelConfigurations.StudentConfiguration`1.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder{GNDSoft.Students.Infrastructure.Students.Core.Models.Entityes.StudentBase{`0}})">
+            <summary>
+            Метод конфигурации
+            </summary>
+            <param name="builder">Объект настроек</param>
+        </member>
+        <member name="T:GNDSoft.Students.Infrastructure.Students.Core.Models.Common.SexEnum">
+            <summary>
+            Перечисление. Возможные типы полов студентов
+            </summary>
+        </member>
+        <member name="F:GNDSoft.Students.Infrastructure.Students.Core.Models.Common.SexEnum.Male">
+            <summary>
+             Парень
+            </summary>
+        </member>
+        <member name="F:GNDSoft.Students.Infrastructure.Students.Core.Models.Common.SexEnum.Female">
+            <summary>
+             Девушка
+            </summary>
+        </member>
+        <member name="T:GNDSoft.Students.Infrastructure.Students.Core.Models.Entityes.CourseBase`1">
+            <summary>
+            Базовая модель БД описывающая сущность курсов для студентов
+            </summary>
+            <typeparam name="TKey">Тип уникального идентификатора</typeparam>
+        </member>
+        <member name="P:GNDSoft.Students.Infrastructure.Students.Core.Models.Entityes.CourseBase`1.Id">
+            <summary>
+            Уникальный идентификатор
+            </summary>
+        </member>
+        <member name="P:GNDSoft.Students.Infrastructure.Students.Core.Models.Entityes.CourseBase`1.Name">
+            <summary>
+            Название курса
+            </summary>
+        </member>
+        <member name="T:GNDSoft.Students.Infrastructure.Students.Core.Models.Entityes.StudentBase`1">
+            <summary>
+            Базовая модель БД описывающая сущность студента
+            </summary>
+            <typeparam name="TKey">Тип уникального идентификатора</typeparam>
+        </member>
+        <member name="P:GNDSoft.Students.Infrastructure.Students.Core.Models.Entityes.StudentBase`1.Id">
+            <summary>
+            Уникальный идентификатор
+            </summary>
+        </member>
+        <member name="P:GNDSoft.Students.Infrastructure.Students.Core.Models.Entityes.StudentBase`1.FirstName">
+            <summary>
+            Имя студента
+            </summary>
+        </member>
+        <member name="P:GNDSoft.Students.Infrastructure.Students.Core.Models.Entityes.StudentBase`1.MiddleName">
+            <summary>
+            Отчество студента
+            </summary>
+        </member>
+        <member name="P:GNDSoft.Students.Infrastructure.Students.Core.Models.Entityes.StudentBase`1.LastName">
+            <summary>
+            Фамилия студента
+            </summary>
+        </member>
+        <member name="P:GNDSoft.Students.Infrastructure.Students.Core.Models.Entityes.StudentBase`1.Sex">
+            <summary>
+            Пол студента
+            </summary>
+        </member>
+        <member name="P:GNDSoft.Students.Infrastructure.Students.Core.Models.Entityes.StudentBase`1.Alias">
+            <summary>
+            Прозвище студента
+            </summary>
+        </member>
+        <member name="T:GNDSoft.Students.Infrastructure.Students.Core.Models.Entityes.StudentCourseBase`1">
+            <summary>
+            Базовая модель БД описывающая связь сущностей студентов и их курсов
+            </summary>
+            <typeparam name="TKey">Тип уникального идентификатора</typeparam>
+        </member>
+        <member name="P:GNDSoft.Students.Infrastructure.Students.Core.Models.Entityes.StudentCourseBase`1.StudentId">
+            <summary>
+            Уникальный идентификатор студента
+            </summary>
+        </member>
+        <member name="P:GNDSoft.Students.Infrastructure.Students.Core.Models.Entityes.StudentCourseBase`1.CourseId">
+            <summary>
+            Уникальный идентификатор курса
+            </summary>
+        </member>
+        <member name="T:GNDSoft.Students.Infrastructure.Students.Core.Repositories.IStudentsRepository`3">
+            <summary>
+            Репозиторий по управлению сущностями студентов
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -13,12 +13,13 @@ namespace GNDSoft.Students.Infrastructure.Students.Core.Models.Entityes
         /// <summary>
         /// Уникальный идентификатор
         /// </summary>
+        [Key]
         public TKey Id { get; set; }
         /// <summary>
         /// Название курса
         /// </summary>
         [Required]
-        [MaxLength(25)]
+        [StringLength(25)]
         public string Name { get; set; }
     }
 }

@@ -19,25 +19,27 @@ namespace GNDSoft.Students.Infrastructure.Students.Core.Models.Entityes
         /// Имя студента
         /// </summary>
         [Required]
+        [StringLength(40)]
         public string FirstName { get; set; }
         /// <summary>
         /// Отчество студента
         /// </summary>
+        [StringLength(60)]
         public string MiddleName { get; set; }
         /// <summary>
         /// Фамилия студента
         /// </summary>
         [Required]
+        [StringLength(40)]
         public string LastName { get; set; }
         /// <summary>
         /// Пол студента
         /// </summary>
-        /// <value></value>
         public SexEnum Sex { get; set; }
         /// <summary>
         /// Прозвище студента
         /// </summary>
+        [StringLength(16, MinimumLength = 6)]
         public string Alias { get; set; }
-        
     }
 }
