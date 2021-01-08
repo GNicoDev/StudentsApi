@@ -1,7 +1,9 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net5.0</TargetFramework>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <AssemblyName>Students.Services</AssemblyName>
+    <RootNamespace>GNDSoft.Students.Infrastructure.Students.Services</RootNamespace>
   </PropertyGroup>
 
 </Project>

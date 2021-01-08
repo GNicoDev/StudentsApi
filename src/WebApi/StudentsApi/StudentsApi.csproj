@@ -6,4 +6,9 @@
     <RootNamespace>GNDSoft.Students.Services.StudentsApi</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="../../Infrastructure/Students.Data" />
+    <ProjectReference Include="../../Infrastructure/Students.Services" />
+  </ItemGroup>
+  
 </Project>
