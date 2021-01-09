@@ -1,7 +1,7 @@
 using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace GNDSoft.Students.Infrastructure.Students.Core.Models.Entityes
+namespace GNDSoft.Students.Infrastructure.Students.Core.Models.Entities
 {
     /// <summary>
     /// Базовая модель БД описывающая сущность курсов для студентов

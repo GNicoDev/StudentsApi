@@ -19,6 +19,18 @@
         <member name="M:GNDSoft.Students.Infrastructure.Students.Data.DbContexts.StudentsContext.OnModelCreating(Microsoft.EntityFrameworkCore.ModelBuilder)">
             <inheritdoc />
         </member>
+        <member name="T:GNDSoft.Students.Infrastructure.Students.Data.Extensions.RegisterRepositoriesExtension">
+            <summary>
+            Класс с расширениями для регистрации репозиториев по управлению студентами и курсами
+            </summary>
+        </member>
+        <member name="M:GNDSoft.Students.Infrastructure.Students.Data.Extensions.RegisterRepositoriesExtension.AddStudetnRepositories``5(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Регистрация сервисов по управлению сущностями
+            </summary>
+            <param name="services">IServiceCollection</param>
+            <returns>IServiceCollection</returns>
+        </member>
         <member name="T:GNDSoft.Students.Infrastructure.Students.Data.Models.Course">
             <summary>
             Модель описывающая сущность курса
@@ -34,7 +46,29 @@
             Модель связи студентов и курсов
             </summary>
         </member>
-        <member name="T:GNDSoft.Students.Infrastructure.Students.Data.Repositories.StudentsRepository`3">
+        <member name="T:GNDSoft.Students.Infrastructure.Students.Data.Repositories.StudentsRepository`5">
+            <inheritdoc />
+        </member>
+        <member name="M:GNDSoft.Students.Infrastructure.Students.Data.Repositories.StudentsRepository`5.#ctor(`0,Microsoft.Extensions.Logging.ILogger{GNDSoft.Students.Infrastructure.Students.Data.Repositories.StudentsRepository{`0,`1,`2,`3,`4}})">
+            <summary>
+            Конструктор
+            </summary>
+            <param name="studentsContext">Контекст БД по управлению сущностями студентов</param>
+            <param name="logger">Logger</param>
+        </member>
+        <member name="M:GNDSoft.Students.Infrastructure.Students.Data.Repositories.StudentsRepository`5.AddAsync(`1)">
+            <inheritdoc />
+        </member>
+        <member name="M:GNDSoft.Students.Infrastructure.Students.Data.Repositories.StudentsRepository`5.DeleteAsync(`1)">
+            <inheritdoc />
+        </member>
+        <member name="M:GNDSoft.Students.Infrastructure.Students.Data.Repositories.StudentsRepository`5.GetAllAsync">
+            <inheritdoc />
+        </member>
+        <member name="M:GNDSoft.Students.Infrastructure.Students.Data.Repositories.StudentsRepository`5.GetOneAsync(`4)">
+            <inheritdoc />
+        </member>
+        <member name="M:GNDSoft.Students.Infrastructure.Students.Data.Repositories.StudentsRepository`5.UpdateAsync(`1)">
             <inheritdoc />
         </member>
     </members>

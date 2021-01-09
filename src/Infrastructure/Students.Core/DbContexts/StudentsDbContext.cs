@@ -1,6 +1,6 @@
 using System;
 using GNDSoft.Students.Infrastructure.Students.Core.ModelConfigurations;
-using GNDSoft.Students.Infrastructure.Students.Core.Models.Entityes;
+using GNDSoft.Students.Infrastructure.Students.Core.Models.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace GNDSoft.Students.Infrastructure.Students.Core.DbContexts

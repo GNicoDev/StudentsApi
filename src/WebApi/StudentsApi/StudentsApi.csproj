@@ -4,10 +4,21 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <AssemblyName>StudentsApi</AssemblyName>
     <RootNamespace>GNDSoft.Students.Services.StudentsApi</RootNamespace>
+    <Description>Сервис для управления Students</Description>
+    <Version>1.0.0</Version>
+    <AssemblyVersion>$(Version)</AssemblyVersion>
+    <Configurations>Debug;Release</Configurations>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>$(MSBuildProjectDirectory)\Students.Services.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>$(MSBuildProjectDirectory)\Students.Services.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="../../Infrastructure/Students.Core/Students.Core.csproj" />
+    <ProjectReference Include="../../Infrastructure/Students.Services/Students.Services.csproj" />
     <ProjectReference Include="../../Infrastructure/Students.Data/Students.Data.csproj" />
   </ItemGroup>
   

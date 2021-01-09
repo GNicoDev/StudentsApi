@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using GNDSoft.Students.Infrastructure.Students.Core.DbContexts;
-using GNDSoft.Students.Infrastructure.Students.Core.Models.Entityes;
+using GNDSoft.Students.Infrastructure.Students.Core.Models.Entities;
 using GNDSoft.Students.Infrastructure.Students.Core.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
@@ -12,27 +12,27 @@ using Microsoft.Extensions.Logging.Abstractions;
 namespace GNDSoft.Students.Infrastructure.Students.Data.Repositories
 {
     /// <inheritdoc />
-    public class StudentsRepository<TStudentDbContext, TStudent, TCourse, TStudentCourse, TKey> :
+    public class StudentsRepository<TStudentsDbContext, TStudent, TCourse, TStudentCourse, TKey> :
         IStudentsRepository<TStudent, TCourse, TKey>
-        where TStudentDbContext: StudentsDbContext<TStudent, TCourse, TStudentCourse, TKey>
+        where TStudentsDbContext: StudentsDbContext<TStudent, TCourse, TStudentCourse, TKey>
         where TStudent : StudentBase<TKey>
         where TCourse : CourseBase<TKey>
         where TStudentCourse: StudentCourseBase<TKey>
         where TKey : IEquatable<TKey>
     {
-        private readonly TStudentDbContext _studentsContext;
-        private readonly ILogger<StudentsRepository<TStudentDbContext, TStudent, TCourse, TStudentCourse, TKey>> _logger;
+        private readonly TStudentsDbContext _studentsContext;
+        private readonly ILogger<StudentsRepository<TStudentsDbContext, TStudent, TCourse, TStudentCourse, TKey>> _logger;
         
         /// <summary>
         /// Конструктор
         /// </summary>
         /// <param name="studentsContext">Контекст БД по управлению сущностями студентов</param>
         /// <param name="logger">Logger</param>
-        public StudentsRepository(TStudentDbContext studentsContext,
-            ILogger<StudentsRepository<TStudentDbContext, TStudent, TCourse, TStudentCourse, TKey>> logger = null)
+        public StudentsRepository(TStudentsDbContext studentsContext,
+            ILogger<StudentsRepository<TStudentsDbContext, TStudent, TCourse, TStudentCourse, TKey>> logger = null)
         {
             _studentsContext = studentsContext;
-            _logger = logger ?? NullLogger<StudentsRepository<TStudentDbContext, TStudent, TCourse, TStudentCourse, TKey>>.Instance;
+            _logger = logger ?? NullLogger<StudentsRepository<TStudentsDbContext, TStudent, TCourse, TStudentCourse, TKey>>.Instance;
         }
 
         /// <inheritdoc />

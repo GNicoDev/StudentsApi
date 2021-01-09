@@ -4,6 +4,25 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <AssemblyName>Students.Services</AssemblyName>
     <RootNamespace>GNDSoft.Students.Infrastructure.Students.Services</RootNamespace>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Description>Пакет для управления объектами Students</Description>
+    <Version>1.0.0</Version>
+    <AssemblyVersion>$(Version)</AssemblyVersion>
+    <Configurations>Debug;Release;DebugLocalPackage</Configurations>
   </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>$(MSBuildProjectDirectory)\Students.Services.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugLocalPackage|AnyCPU'">
+    <DocumentationFile>$(MSBuildProjectDirectory)\Students.Services.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>$(MSBuildProjectDirectory)\Students.Services.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="../Students.Core/Students.Core.csproj" />
+  </ItemGroup>
 
 </Project>

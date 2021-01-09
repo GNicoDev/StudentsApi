@@ -1,6 +1,6 @@
 using System;
 using GNDSoft.Students.Infrastructure.Students.Core.Models.Common;
-using GNDSoft.Students.Infrastructure.Students.Core.Models.Entityes;
+using GNDSoft.Students.Infrastructure.Students.Core.Models.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 

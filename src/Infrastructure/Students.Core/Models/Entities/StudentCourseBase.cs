@@ -1,6 +1,6 @@
 using System;
 
-namespace GNDSoft.Students.Infrastructure.Students.Core.Models.Entityes
+namespace GNDSoft.Students.Infrastructure.Students.Core.Models.Entities
 {
     /// <summary>
     /// Базовая модель БД описывающая связь сущностей студентов и их курсов

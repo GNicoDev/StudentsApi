@@ -1,14 +1,13 @@
 using System;
-using System.ComponentModel.DataAnnotations;
 using GNDSoft.Students.Infrastructure.Students.Core.Models.Common;
 
-namespace GNDSoft.Students.Infrastructure.Students.Core.Models.Entityes
+namespace GNDSoft.Students.Infrastructure.Students.Core.Models.Dto
 {
     /// <summary>
-    /// Базовая модель БД описывающая сущность студента
+    /// Базовая транспортная модель для студента
     /// </summary>
     /// <typeparam name="TKey">Тип уникального идентификатора</typeparam>
-    public class StudentBase<TKey>
+    public class StudentDtoBase<TKey>
         where TKey: IEquatable<TKey>
     {
         /// <summary>
@@ -18,19 +17,14 @@ namespace GNDSoft.Students.Infrastructure.Students.Core.Models.Entityes
         /// <summary>
         /// Имя студента
         /// </summary>
-        [Required]
-        [StringLength(40)]
         public string FirstName { get; set; }
         /// <summary>
         /// Отчество студента
         /// </summary>
-        [StringLength(60)]
         public string MiddleName { get; set; }
         /// <summary>
         /// Фамилия студента
         /// </summary>
-        [Required]
-        [StringLength(40)]
         public string LastName { get; set; }
         /// <summary>
         /// Пол студента
@@ -39,7 +33,6 @@ namespace GNDSoft.Students.Infrastructure.Students.Core.Models.Entityes
         /// <summary>
         /// Прозвище студента
         /// </summary>
-        [StringLength(16, MinimumLength = 6)]
         public string Alias { get; set; }
     }
 }
