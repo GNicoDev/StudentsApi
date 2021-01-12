@@ -23,10 +23,10 @@ namespace GNDSoft.Students.Infrastructure.Students.Core.ModelConfigurations
                 .HasKey(s => s.Id);
 
             builder
-                .Property(s => s.Sex)
+                .Property(s => s.Gender)
                 .HasConversion(
                     v => v.ToString(),
-                    v => (SexEnum)Enum.Parse(typeof(SexEnum), v))
+                    v => (GenderEnum)Enum.Parse(typeof(GenderEnum), v))
                 .IsRequired();
 
             builder.HasIndex(u => u.Alias)

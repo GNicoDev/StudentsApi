@@ -24,14 +24,7 @@ namespace GNDSoft.Students.Infrastructure.Students.Core.Repositories
         /// Получение списка всех записей в БД
         /// </summary>
         /// <returns>Список записей</returns>
-        Task<List<TEntity>> GetAllAsync();
-
-        /// <summary>
-        /// Получить информацию об одной записи по id
-        /// </summary>
-        /// <param name="id">Уникальный идентификатор записи</param>
-        /// <returns>Инфомарция о записи</returns>
-        Task<TEntity> GetOneAsync(TKey id);
+        IEnumerable<TEntity> GetAll();
 
         /// <summary>
         /// Обновить данные в записи
@@ -46,5 +39,11 @@ namespace GNDSoft.Students.Infrastructure.Students.Core.Repositories
         /// <param name="entry">Объект для удаления</param>
         /// <returns>Статус операции</returns>
         Task<bool> DeleteAsync(TEntity entry);
+
+        /// <summary>
+        /// Асихнронное сохранение изменений
+        /// </summary>
+        /// <returns>Статус операции</returns>
+        Task<bool> CommitAsync();
     }
 }

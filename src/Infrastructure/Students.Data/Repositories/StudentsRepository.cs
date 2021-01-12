@@ -13,6 +13,7 @@ namespace GNDSoft.Students.Infrastructure.Students.Data.Repositories
 {
     /// <inheritdoc />
     public class StudentsRepository<TStudentsDbContext, TStudent, TCourse, TStudentCourse, TKey> :
+        BaseRepository<TStudentsDbContext, TStudent, TKey>,
         IStudentsRepository<TStudent, TCourse, TKey>
         where TStudentsDbContext: StudentsDbContext<TStudent, TCourse, TStudentCourse, TKey>
         where TStudent : StudentBase<TKey>
@@ -26,37 +27,26 @@ namespace GNDSoft.Students.Infrastructure.Students.Data.Repositories
         /// <summary>
         /// Конструктор
         /// </summary>
-        /// <param name="studentsContext">Контекст БД по управлению сущностями студентов</param>
+        /// <param name="dbContext">Контекст БД по управлению сущностями студентов</param>
         /// <param name="logger">Logger</param>
-        public StudentsRepository(TStudentsDbContext studentsContext,
-            ILogger<StudentsRepository<TStudentsDbContext, TStudent, TCourse, TStudentCourse, TKey>> logger = null)
+        public StudentsRepository(TStudentsDbContext dbContext,
+            ILogger<StudentsRepository<TStudentsDbContext, TStudent, TCourse, TStudentCourse, TKey>> logger = null): base(dbContext)
         {
-            _studentsContext = studentsContext;
+            _studentsContext = dbContext;
             _logger = logger ?? NullLogger<StudentsRepository<TStudentsDbContext, TStudent, TCourse, TStudentCourse, TKey>>.Instance;
-        }
-
-        /// <inheritdoc />
-        public async Task<TStudent> AddAsync(TStudent entity)
-        {
-            await _studentsContext.Students.AddAsync(entity);
-            var res = await _studentsContext.SaveChangesAsync();
-            
-            return entity;
-        }
-
-        /// <inheritdoc />
-        public async Task<bool> DeleteAsync(TStudent student)
-        {
-            _studentsContext.Students.Remove(student);
-            var res = await _studentsContext.SaveChangesAsync();
-
-            return res > 0;
         }
 
         /// <inheritdoc />
         public Task<List<TStudent>> GetAllAsync()
         {
-            var allEntries = _studentsContext.Students
+            var students = this.DbSet;
+            return students.ToListAsync();
+        }
+
+        /// <inheritdoc />
+        public Task<List<TStudent>> GetAllExtendedAsync()
+        {
+            var allEntries = DbSet
                 .Join(_studentsContext.Set<TStudentCourse>(), s => s.Id, sc => sc.StudentId, (s, sc) => new {s, sc})
                 .Select(t => t.s);
 
@@ -64,22 +54,23 @@ namespace GNDSoft.Students.Infrastructure.Students.Data.Repositories
         }
 
         /// <inheritdoc />
-        public Task<TStudent> GetOneAsync(TKey id)
+        public Task<TStudent> GetOneByIdAsync(TKey id)
         {
-            var entry = _studentsContext
-                .Students
+            var student = DbSet
                 .SingleOrDefaultAsync(it => it.Id.Equals(id));
 
-            return entry;
+            return student;
         }
 
         /// <inheritdoc />
-        public async Task<TStudent> UpdateAsync(TStudent entity)
+        public Task<TStudent> GetOneByIdExtendedAsync(TKey id)
         {
-            _studentsContext.Students.Update(entity);
-            var res = await _studentsContext.SaveChangesAsync();
+            var student = DbSet
+                .Join(_studentsContext.Set<TStudentCourse>(), s => s.Id, sc => sc.StudentId, (s, sc) => new {s, sc})
+                .Select(t => t.s)
+                .SingleOrDefaultAsync(it => it.Id.Equals(id));
 
-            return entity;
+            return student;
         }
     }
 }

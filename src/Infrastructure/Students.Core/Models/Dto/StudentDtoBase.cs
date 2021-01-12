@@ -29,7 +29,7 @@ namespace GNDSoft.Students.Infrastructure.Students.Core.Models.Dto
         /// <summary>
         /// Пол студента
         /// </summary>
-        public SexEnum Sex { get; set; }
+        public GenderEnum Gender { get; set; }
         /// <summary>
         /// Прозвище студента
         /// </summary>

@@ -13,22 +13,42 @@ using Microsoft.Extensions.Hosting;
 
 namespace GNDSoft.Students.Services.StudentsApi
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class Startup
     {
+        /// <summary>
+        /// Объект конфигурации сервиса
+        /// </summary>
+        /// <value></value>
         public IConfiguration Configuration { get; set; }
 
+        /// <summary>
+        /// Конструктор
+        /// </summary>
+        /// <param name="configuration">Объект конфигурации сервиса</param>
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
         }
 
+        /// <summary>
+        /// Метод конфигурации сервиса
+        /// </summary>
+        /// <param name="services">Коллекция сервисов</param>
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddStudetnRepositories<StudentsContext, Student, Course, StudentCourse, Guid>()
-                .AddStudetnServices<StudentDto, CourseDto, Guid>();
+                .AddStudetnServices<Student, Course, StudentDto, CourseDto, Guid>();
             services.AddControllers();
         }
 
+        /// <summary>
+        /// Метод конфигурации конвейера обработки запросов
+        /// </summary>
+        /// <param name="app"></param>
+        /// <param name="env">Интерфейс окружения хоста</param>
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
