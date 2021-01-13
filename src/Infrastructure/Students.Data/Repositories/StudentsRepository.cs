@@ -30,7 +30,7 @@ namespace GNDSoft.Students.Infrastructure.Students.Data.Repositories
         /// <param name="dbContext">Контекст БД по управлению сущностями студентов</param>
         /// <param name="logger">Logger</param>
         public StudentsRepository(TStudentsDbContext dbContext,
-            ILogger<StudentsRepository<TStudentsDbContext, TStudent, TCourse, TStudentCourse, TKey>> logger = null): base(dbContext)
+            ILogger<StudentsRepository<TStudentsDbContext, TStudent, TCourse, TStudentCourse, TKey>> logger = null): base(dbContext, logger)
         {
             _studentsContext = dbContext;
             _logger = logger ?? NullLogger<StudentsRepository<TStudentsDbContext, TStudent, TCourse, TStudentCourse, TKey>>.Instance;
@@ -40,6 +40,8 @@ namespace GNDSoft.Students.Infrastructure.Students.Data.Repositories
         public Task<List<TStudent>> GetAllAsync()
         {
             var students = this.DbSet;
+
+            _logger.LogDebug("Getting all students from db");
             return students.ToListAsync();
         }
 
@@ -50,6 +52,7 @@ namespace GNDSoft.Students.Infrastructure.Students.Data.Repositories
                 .Join(_studentsContext.Set<TStudentCourse>(), s => s.Id, sc => sc.StudentId, (s, sc) => new {s, sc})
                 .Select(t => t.s);
 
+            _logger.LogDebug("Getting all students with courses from db");
             return allEntries.ToListAsync();
         }
 
@@ -59,6 +62,7 @@ namespace GNDSoft.Students.Infrastructure.Students.Data.Repositories
             var student = DbSet
                 .SingleOrDefaultAsync(it => it.Id.Equals(id));
 
+            _logger.LogDebug($"Get student with id {id} from db");
             return student;
         }
 
@@ -70,6 +74,7 @@ namespace GNDSoft.Students.Infrastructure.Students.Data.Repositories
                 .Select(t => t.s)
                 .SingleOrDefaultAsync(it => it.Id.Equals(id));
 
+            _logger.LogDebug($"Get student (with his courses) with id {id} from db");
             return student;
         }
     }

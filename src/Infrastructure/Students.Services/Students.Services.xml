@@ -9,7 +9,7 @@
             Класс с расширениями для регистрации сервисов по управлению студентами и курсами
             </summary>
         </member>
-        <member name="M:GNDSoft.Students.Infrastructure.Students.Services.Extensions.RegisterServicesExtension.AddStudetnServices``3(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+        <member name="M:GNDSoft.Students.Infrastructure.Students.Services.Extensions.RegisterServicesExtension.AddStudetnServices``5(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
             <summary>
             Регистрация сервисов по управлению сущностями
             </summary>
@@ -26,27 +26,40 @@
             Транспортная модель для студента
             </summary>
         </member>
-        <member name="T:GNDSoft.Students.Infrastructure.Students.Services.StudentsService`3">
+        <member name="T:GNDSoft.Students.Infrastructure.Students.Services.StudentsService`5">
             <summary>
             Сервис по управлению студентами
             </summary>
+            <typeparam name="TStudent">Транспортная модель студента</typeparam>
+            <typeparam name="TCourse">Транспортная модель курса</typeparam>
             <typeparam name="TStudentDto">Транспортная модель студента</typeparam>
             <typeparam name="TCourseDto">Транспортная модель курса</typeparam>
             <typeparam name="TKey">Тип уникального идентификатора</typeparam>
         </member>
-        <member name="M:GNDSoft.Students.Infrastructure.Students.Services.StudentsService`3.AddAsync(`0)">
+        <member name="M:GNDSoft.Students.Infrastructure.Students.Services.StudentsService`5.#ctor(GNDSoft.Students.Infrastructure.Students.Core.Repositories.IStudentsRepository{`0,`1,`4},AutoMapper.IMapper,Microsoft.Extensions.Logging.ILogger{GNDSoft.Students.Infrastructure.Students.Services.StudentsService{`0,`1,`2,`3,`4}})">
+            <summary>
+            Конструктор
+            </summary>
+        </member>
+        <member name="M:GNDSoft.Students.Infrastructure.Students.Services.StudentsService`5.AddAsync(`2)">
             <inheritdoc />
         </member>
-        <member name="M:GNDSoft.Students.Infrastructure.Students.Services.StudentsService`3.DeleteAsync(`2)">
+        <member name="M:GNDSoft.Students.Infrastructure.Students.Services.StudentsService`5.DeleteAsync(`4)">
             <inheritdoc />
         </member>
-        <member name="M:GNDSoft.Students.Infrastructure.Students.Services.StudentsService`3.GetAllAsync">
+        <member name="M:GNDSoft.Students.Infrastructure.Students.Services.StudentsService`5.GetAll">
             <inheritdoc />
         </member>
-        <member name="M:GNDSoft.Students.Infrastructure.Students.Services.StudentsService`3.GetOneAsync(`2)">
+        <member name="M:GNDSoft.Students.Infrastructure.Students.Services.StudentsService`5.GetAllAsync">
             <inheritdoc />
         </member>
-        <member name="M:GNDSoft.Students.Infrastructure.Students.Services.StudentsService`3.UpdateAsync(`0)">
+        <member name="M:GNDSoft.Students.Infrastructure.Students.Services.StudentsService`5.GetOneAsync(`4)">
+            <inheritdoc />
+        </member>
+        <member name="M:GNDSoft.Students.Infrastructure.Students.Services.StudentsService`5.GetOneExtendedAsync(`4)">
+            <inheritdoc />
+        </member>
+        <member name="M:GNDSoft.Students.Infrastructure.Students.Services.StudentsService`5.UpdateAsync(`2)">
             <inheritdoc />
         </member>
     </members>

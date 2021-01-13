@@ -46,6 +46,51 @@
             Модель связи студентов и курсов
             </summary>
         </member>
+        <member name="T:GNDSoft.Students.Infrastructure.Students.Data.Repositories.BaseRepository`3">
+            <summary>
+            Реализация интерфейса базового репозитория базового 
+            </summary>
+            <typeparam name="TDbContext">Обобщенный контекст</typeparam>
+            <typeparam name="TEntity">Обобщенная сущность</typeparam>
+            <typeparam name="TKey">Обобщенный уникальный идентификатор сущности</typeparam>
+        </member>
+        <member name="P:GNDSoft.Students.Infrastructure.Students.Data.Repositories.BaseRepository`3.DbSet">
+            <summary>
+            Доступ к элементам TEntity
+            </summary>
+        </member>
+        <member name="M:GNDSoft.Students.Infrastructure.Students.Data.Repositories.BaseRepository`3.#ctor(`0,Microsoft.Extensions.Logging.ILogger{GNDSoft.Students.Infrastructure.Students.Data.Repositories.BaseRepository{`0,`1,`2}})">
+            <summary>
+            Конструктор
+            </summary>
+            <param name="dbContext">Обобщенный контекст</param>
+            <param name="logger">Logger</param>
+        </member>
+        <member name="M:GNDSoft.Students.Infrastructure.Students.Data.Repositories.BaseRepository`3.AddAsync(`1)">
+            <inheritdoc />
+        </member>
+        <member name="M:GNDSoft.Students.Infrastructure.Students.Data.Repositories.BaseRepository`3.GetAll">
+            <inheritdoc />
+        </member>
+        <member name="M:GNDSoft.Students.Infrastructure.Students.Data.Repositories.BaseRepository`3.UpdateAsync(`1)">
+            <inheritdoc />
+        </member>
+        <member name="M:GNDSoft.Students.Infrastructure.Students.Data.Repositories.BaseRepository`3.DeleteAsync(`1)">
+            <inheritdoc />
+        </member>
+        <member name="M:GNDSoft.Students.Infrastructure.Students.Data.Repositories.BaseRepository`3.CommitAsync">
+            <inheritdoc />
+        </member>
+        <member name="T:GNDSoft.Students.Infrastructure.Students.Data.Repositories.CoursesRepository`5">
+            <inheritdoc />
+        </member>
+        <member name="M:GNDSoft.Students.Infrastructure.Students.Data.Repositories.CoursesRepository`5.#ctor(`0,Microsoft.Extensions.Logging.ILogger{GNDSoft.Students.Infrastructure.Students.Data.Repositories.CoursesRepository{`0,`1,`2,`3,`4}})">
+            <summary>
+            Конструктор
+            </summary>
+            <param name="dbContext">Контекст БД по управлению сущностями студентов</param>
+            <param name="logger">Logger</param>
+        </member>
         <member name="T:GNDSoft.Students.Infrastructure.Students.Data.Repositories.StudentsRepository`5">
             <inheritdoc />
         </member>
@@ -53,22 +98,19 @@
             <summary>
             Конструктор
             </summary>
-            <param name="studentsContext">Контекст БД по управлению сущностями студентов</param>
+            <param name="dbContext">Контекст БД по управлению сущностями студентов</param>
             <param name="logger">Logger</param>
-        </member>
-        <member name="M:GNDSoft.Students.Infrastructure.Students.Data.Repositories.StudentsRepository`5.AddAsync(`1)">
-            <inheritdoc />
-        </member>
-        <member name="M:GNDSoft.Students.Infrastructure.Students.Data.Repositories.StudentsRepository`5.DeleteAsync(`1)">
-            <inheritdoc />
         </member>
         <member name="M:GNDSoft.Students.Infrastructure.Students.Data.Repositories.StudentsRepository`5.GetAllAsync">
             <inheritdoc />
         </member>
-        <member name="M:GNDSoft.Students.Infrastructure.Students.Data.Repositories.StudentsRepository`5.GetOneAsync(`4)">
+        <member name="M:GNDSoft.Students.Infrastructure.Students.Data.Repositories.StudentsRepository`5.GetAllExtendedAsync">
             <inheritdoc />
         </member>
-        <member name="M:GNDSoft.Students.Infrastructure.Students.Data.Repositories.StudentsRepository`5.UpdateAsync(`1)">
+        <member name="M:GNDSoft.Students.Infrastructure.Students.Data.Repositories.StudentsRepository`5.GetOneByIdAsync(`4)">
+            <inheritdoc />
+        </member>
+        <member name="M:GNDSoft.Students.Infrastructure.Students.Data.Repositories.StudentsRepository`5.GetOneByIdExtendedAsync(`4)">
             <inheritdoc />
         </member>
     </members>

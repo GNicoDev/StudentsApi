@@ -47,7 +47,8 @@ namespace GNDSoft.Students.Infrastructure.Students.Data.Repositories
             {
                 await DbSet.AddAsync(entity);
                 var res = await CommitAsync();
-
+                
+                _logger.LogDebug($"Adding entry {nameof(TEntity)} to db");
                 return entity;
             }
             catch (DbUpdateException ex)
@@ -68,7 +69,8 @@ namespace GNDSoft.Students.Infrastructure.Students.Data.Repositories
             {
                 DbSet.Update(entity);
                 var res = await CommitAsync();
-
+                 
+                _logger.LogDebug($"Update entry {nameof(TEntity)} in db");
                 return entity;
             }
             catch (DbUpdateException ex)
@@ -86,6 +88,7 @@ namespace GNDSoft.Students.Infrastructure.Students.Data.Repositories
             {
                 DbSet.Remove(entry);
                 
+                _logger.LogDebug($"Delete entry {nameof(TEntity)} from db");
                 return await CommitAsync();
             }
             catch (DbUpdateException ex)

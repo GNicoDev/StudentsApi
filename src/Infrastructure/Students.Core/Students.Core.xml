@@ -40,6 +40,103 @@
             </summary>
             <param name="modelBuilder">Объект билдера моделей</param>
         </member>
+        <member name="T:GNDSoft.Students.Infrastructure.Students.Core.Exceptions.BaseException">
+            <summary>
+            Базовый класс исключения с кодом исключения
+            </summary>
+        </member>
+        <member name="P:GNDSoft.Students.Infrastructure.Students.Core.Exceptions.BaseException.ErrorCode">
+            <summary>
+            Пользовательский код ошибки
+            </summary>
+        </member>
+        <member name="M:GNDSoft.Students.Infrastructure.Students.Core.Exceptions.BaseException.#ctor">
+            <summary>
+            Базовый конструктор
+            </summary>
+        </member>
+        <member name="M:GNDSoft.Students.Infrastructure.Students.Core.Exceptions.BaseException.#ctor(System.String)">
+            <summary>
+            Конструктор с сообщением об ошибке
+            </summary>
+            <param name="message">Сообщение об ошибке</param>
+        </member>
+        <member name="M:GNDSoft.Students.Infrastructure.Students.Core.Exceptions.BaseException.#ctor(System.String,System.String)">
+            <summary>
+            Конструктор с сообщением об ошибке и кодом
+            </summary>
+            <param name="message">Сообщение об ошибке</param>
+            <param name="errorCode">Код ошибки</param>
+        </member>
+        <member name="M:GNDSoft.Students.Infrastructure.Students.Core.Exceptions.BaseException.#ctor(System.String,System.String,System.Exception)">
+            <summary>
+            Конструктор с сообщением об ошибке и кодом
+            </summary>
+            <param name="message">Сообщение об ошибке</param>
+            <param name="errorCode">Код ошибки</param>
+            <param name="innerException">Внутренняя ошибка</param>
+        </member>
+        <member name="T:GNDSoft.Students.Infrastructure.Students.Core.Exceptions.GenericExceptionCode`1">
+            <summary>
+            Базовые коды ошибок
+            </summary>
+        </member>
+        <member name="P:GNDSoft.Students.Infrastructure.Students.Core.Exceptions.GenericExceptionCode`1.NotFound">
+            <summary>
+            Объект TEntry не найден
+            </summary>
+        </member>
+        <member name="P:GNDSoft.Students.Infrastructure.Students.Core.Exceptions.GenericExceptionCode`1.Create">
+            <summary>
+            Ошибка при создании TEntry
+            </summary>
+        </member>
+        <member name="P:GNDSoft.Students.Infrastructure.Students.Core.Exceptions.GenericExceptionCode`1.Update">
+            <summary>
+            Ошибка при удалении TEntry
+            </summary>
+        </member>
+        <member name="P:GNDSoft.Students.Infrastructure.Students.Core.Exceptions.GenericExceptionCode`1.Delete">
+            <summary>
+            Ошибка при обновлении TEntry
+            </summary>
+        </member>
+        <member name="T:GNDSoft.Students.Infrastructure.Students.Core.Exceptions.StudentException">
+            <summary>
+            Исключение вызываемое при работе с объектами студентов
+            </summary>
+        </member>
+        <member name="F:GNDSoft.Students.Infrastructure.Students.Core.Exceptions.StudentException.DefaultCode">
+            <summary>
+            Код ошибки по умолчанию
+            </summary>
+        </member>
+        <member name="M:GNDSoft.Students.Infrastructure.Students.Core.Exceptions.StudentException.#ctor(System.String)">
+            <summary>
+            Конструктор
+            </summary>
+            <param name="message">Сообщение об ошибке</param>
+        </member>
+        <member name="M:GNDSoft.Students.Infrastructure.Students.Core.Exceptions.StudentException.#ctor(System.String,System.String)">
+            <summary>
+            Конструктор
+            </summary>
+            <param name="message">Сообщение об ошибке</param>
+            <param name="code">Код ошибки</param>
+        </member>
+        <member name="M:GNDSoft.Students.Infrastructure.Students.Core.Exceptions.StudentException.#ctor(System.String,System.String,System.Exception)">
+            <summary>
+            Конструктор
+            </summary>
+            <param name="message">Сообщение об ошибке</param>
+            <param name="code">Код ошибки</param>
+            <param name="innerException">Внутренняя ошибка</param>
+        </member>
+        <member name="T:GNDSoft.Students.Infrastructure.Students.Core.Mappers.StudentsMapperProfile`3">
+            <summary>
+            Профиль для маппинга сущностей студентов из Entity в Dto и обратно
+            </summary>
+        </member>
         <member name="T:GNDSoft.Students.Infrastructure.Students.Core.ModelConfigurations.CourseConfiguration`1">
             <summary>
             Конфигурация таблицы Cources
@@ -64,17 +161,17 @@
             </summary>
             <param name="builder">Объект настроек</param>
         </member>
-        <member name="T:GNDSoft.Students.Infrastructure.Students.Core.Models.Common.SexEnum">
+        <member name="T:GNDSoft.Students.Infrastructure.Students.Core.Models.Common.GenderEnum">
             <summary>
             Перечисление. Возможные типы полов студентов
             </summary>
         </member>
-        <member name="F:GNDSoft.Students.Infrastructure.Students.Core.Models.Common.SexEnum.Male">
+        <member name="F:GNDSoft.Students.Infrastructure.Students.Core.Models.Common.GenderEnum.Male">
             <summary>
              Парень
             </summary>
         </member>
-        <member name="F:GNDSoft.Students.Infrastructure.Students.Core.Models.Common.SexEnum.Female">
+        <member name="F:GNDSoft.Students.Infrastructure.Students.Core.Models.Common.GenderEnum.Female">
             <summary>
              Девушка
             </summary>
@@ -121,7 +218,7 @@
             Фамилия студента
             </summary>
         </member>
-        <member name="P:GNDSoft.Students.Infrastructure.Students.Core.Models.Dto.StudentDtoBase`1.Sex">
+        <member name="P:GNDSoft.Students.Infrastructure.Students.Core.Models.Dto.StudentDtoBase`1.Gender">
             <summary>
             Пол студента
             </summary>
@@ -183,7 +280,7 @@
             Фамилия студента
             </summary>
         </member>
-        <member name="P:GNDSoft.Students.Infrastructure.Students.Core.Models.Entities.StudentBase`1.Sex">
+        <member name="P:GNDSoft.Students.Infrastructure.Students.Core.Models.Entities.StudentBase`1.Gender">
             <summary>
             Пол студента
             </summary>
@@ -223,18 +320,11 @@
             <param name="entity">Новая запись</param>
             <returns>Информация о добавленной записи</returns>
         </member>
-        <member name="M:GNDSoft.Students.Infrastructure.Students.Core.Repositories.IBaseRepository`2.GetAllAsync">
+        <member name="M:GNDSoft.Students.Infrastructure.Students.Core.Repositories.IBaseRepository`2.GetAll">
             <summary>
             Получение списка всех записей в БД
             </summary>
             <returns>Список записей</returns>
-        </member>
-        <member name="M:GNDSoft.Students.Infrastructure.Students.Core.Repositories.IBaseRepository`2.GetOneAsync(`1)">
-            <summary>
-            Получить информацию об одной записи по id
-            </summary>
-            <param name="id">Уникальный идентификатор записи</param>
-            <returns>Инфомарция о записи</returns>
         </member>
         <member name="M:GNDSoft.Students.Infrastructure.Students.Core.Repositories.IBaseRepository`2.UpdateAsync(`0)">
             <summary>
@@ -250,49 +340,47 @@
             <param name="entry">Объект для удаления</param>
             <returns>Статус операции</returns>
         </member>
+        <member name="M:GNDSoft.Students.Infrastructure.Students.Core.Repositories.IBaseRepository`2.CommitAsync">
+            <summary>
+            Асихнронное сохранение изменений
+            </summary>
+            <returns>Статус операции</returns>
+        </member>
+        <member name="T:GNDSoft.Students.Infrastructure.Students.Core.Repositories.ICoursesRepository`3">
+            <summary>
+            Репозиторий по управлению сущностями курсов
+            </summary>
+        </member>
         <member name="T:GNDSoft.Students.Infrastructure.Students.Core.Repositories.IStudentsRepository`3">
             <summary>
             Репозиторий по управлению сущностями студентов
             </summary>
         </member>
-        <member name="T:GNDSoft.Students.Infrastructure.Students.Core.Services.IBaseService`2">
+        <member name="M:GNDSoft.Students.Infrastructure.Students.Core.Repositories.IStudentsRepository`3.GetAllAsync">
             <summary>
-            Базовый интерфейс для сервиса управления репозиторием
+            Получить список студентов
             </summary>
+            <returns></returns>
         </member>
-        <member name="M:GNDSoft.Students.Infrastructure.Students.Core.Services.IBaseService`2.AddAsync(`0)">
+        <member name="M:GNDSoft.Students.Infrastructure.Students.Core.Repositories.IStudentsRepository`3.GetAllExtendedAsync">
             <summary>
-            Асинхронное добавление записи
+            Получить список студентов вместе с курсами
             </summary>
-            <param name="dtoModel">Новая запись</param>
-            <returns>Информация о добавленной записи</returns>
+            <returns></returns>
         </member>
-        <member name="M:GNDSoft.Students.Infrastructure.Students.Core.Services.IBaseService`2.GetAllAsync">
+        <member name="M:GNDSoft.Students.Infrastructure.Students.Core.Repositories.IStudentsRepository`3.GetOneByIdAsync(`2)">
             <summary>
-            Получение списка всех записей
-            </summary>
-            <returns>Список записей</returns>
-        </member>
-        <member name="M:GNDSoft.Students.Infrastructure.Students.Core.Services.IBaseService`2.GetOneAsync(`1)">
-            <summary>
-            Получить информацию об одной записи по id
+            Получить информацию об студенте по id
             </summary>
             <param name="id">Уникальный идентификатор записи</param>
             <returns>Инфомарция о записи</returns>
         </member>
-        <member name="M:GNDSoft.Students.Infrastructure.Students.Core.Services.IBaseService`2.UpdateAsync(`0)">
+        <member name="M:GNDSoft.Students.Infrastructure.Students.Core.Repositories.IStudentsRepository`3.GetOneByIdExtendedAsync(`2)">
             <summary>
-            Обновить данные в записи
-            </summary>
-            <param name="dtoModel">Данные новой записи</param>
-            <returns>Обвленная запись</returns>
-        </member>
-        <member name="M:GNDSoft.Students.Infrastructure.Students.Core.Services.IBaseService`2.DeleteAsync(`1)">
-            <summary>
-            Асинхронное удаление записи
+            Получить информацию об студенте по id вместе с курсами
             </summary>
             <param name="id">Уникальный идентификатор записи</param>
-            <returns>Статус операции</returns>
+            <returns>Инфомарция о записи</returns>
         </member>
         <member name="T:GNDSoft.Students.Infrastructure.Students.Core.Services.IStudentsService`3">
             <summary>
@@ -301,6 +389,53 @@
             <typeparam name="TStudentDto">Транспортная модель студента</typeparam>
             <typeparam name="TCourseDto">Транспортная модель курса</typeparam>
             <typeparam name="TKey">Тип уникального идентификатора</typeparam>
+        </member>
+        <member name="M:GNDSoft.Students.Infrastructure.Students.Core.Services.IStudentsService`3.AddAsync(`0)">
+            <summary>
+            Асинхронное добавление записи
+            </summary>
+            <param name="dtoModel">Новая запись</param>
+            <returns>Информация о добавленной записи</returns>
+        </member>
+        <member name="M:GNDSoft.Students.Infrastructure.Students.Core.Services.IStudentsService`3.GetAll">
+            <summary>
+            Получение списка всех записей
+            </summary>
+            <returns>Список записей</returns>
+        </member>
+        <member name="M:GNDSoft.Students.Infrastructure.Students.Core.Services.IStudentsService`3.GetAllAsync">
+            <summary>
+            Получение списка всех записей
+            </summary>
+            <returns>Список записей</returns>
+        </member>
+        <member name="M:GNDSoft.Students.Infrastructure.Students.Core.Services.IStudentsService`3.GetOneAsync(`2)">
+            <summary>
+            Получить информацию об одной записи по id
+            </summary>
+            <param name="id">Уникальный идентификатор записи</param>
+            <returns>Инфомарция о записи</returns>
+        </member>
+        <member name="M:GNDSoft.Students.Infrastructure.Students.Core.Services.IStudentsService`3.GetOneExtendedAsync(`2)">
+            <summary>
+            Получить информацию об одной записи по id
+            </summary>
+            <param name="id">Уникальный идентификатор записи</param>
+            <returns>Инфомарция о записи</returns>
+        </member>
+        <member name="M:GNDSoft.Students.Infrastructure.Students.Core.Services.IStudentsService`3.UpdateAsync(`0)">
+            <summary>
+            Обновить данные в записи
+            </summary>
+            <param name="dtoModel">Данные новой записи</param>
+            <returns>Обвленная запись</returns>
+        </member>
+        <member name="M:GNDSoft.Students.Infrastructure.Students.Core.Services.IStudentsService`3.DeleteAsync(`2)">
+            <summary>
+            Асинхронное удаление записи
+            </summary>
+            <param name="id">Уникальный идентификатор записи</param>
+            <returns>Статус операции</returns>
         </member>
     </members>
 </doc>
